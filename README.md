@@ -1,18 +1,19 @@
 # figma-to-ide
 
-Convert your Figma design files into a developer-friendly structure (Model Context Protocol) for integration with IDEs, Copilot, Cursor, or code automation tools.
+Convert Figma design files into Claude-compatible Model Context Protocol (MCP) for use in IDEs, AI code assistants like Copilot, Cursor, or static generators.
 
-> 🛠 Built by [Mehmet ALP](https://www.linkedin.com/in/mehmetalp/), Founder of [Codigma.io](https://codigma.io) & [Rast Mobile](https://rastmobile.com)
+> 🔧 Built by [Mehmet ALP](https://www.linkedin.com/in/mehmetalp/), Founder of [Codigma.io](https://getcodigma.com) & [Rast Mobile](https://rastmobile.com)
 
 ---
 
 ## ✨ Features
 
-- Fetch data from Figma using your API Key and File ID
-- Converts design layers into a structured MCP (Model Context Protocol)
-- Supports multiple pages, frames, and components
-- CLI with `--visualize` flag to print design hierarchy as a tree
-- Save as JSON with `--output` option
+- Accepts full Figma design URLs (e.g. `https://www.figma.com/design/...`)
+- Automatically normalizes and extracts the correct file ID
+- Generates MCP (Model Context Protocol) structure from Figma design data
+- CLI support to visualize component structure
+- Supports multiple pages, nested frames, and components
+- Saves result as JSON or displays in terminal
 
 ---
 
@@ -22,7 +23,7 @@ Convert your Figma design files into a developer-friendly structure (Model Conte
 npm install -g figma-to-ide
 ```
 
-Or use locally in a project:
+Or install locally in your project:
 
 ```bash
 npm install figma-to-ide
@@ -33,39 +34,55 @@ npm install figma-to-ide
 ## 🚀 CLI Usage
 
 ```bash
-figma-to-ide --key YOUR_FIGMA_API_KEY --file YOUR_FIGMA_FILE_ID
+figma-to-ide --key YOUR_FIGMA_API_KEY --file "https://www.figma.com/design/FILE_ID/Project-Name" --visualize
 ```
 
 ### Optional Flags
 
-| Flag         | Description                                 |
-|--------------|---------------------------------------------|
-| `--visualize` or `-v` | Prints a tree of your components in terminal |
-| `--output` or `-o`    | Saves the output to a JSON file             |
+| Flag           | Description                                                |
+|----------------|------------------------------------------------------------|
+| `--key`, `-k`  | Your Figma personal access token                           |
+| `--file`, `-f` | Full Figma file URL or just the file ID                    |
+| `--visualize`, `-v` | Show component/page hierarchy as a tree in the terminal |
+| `--output`, `-o` | Save the result to a file as `output.json`                |
 
-### Example:
+---
+
+## 🔁 Example
 
 ```bash
-figma-to-ide -k abc123 -f XYZ456 -v -o mcp.json
+figma-to-ide -k figd_ABC123... -f "https://www.figma.com/design/uek5kq.../Project" -v -o mcp.json
 ```
 
 ---
 
 ## 🧠 What is MCP?
 
-Model Context Protocol is a developer-friendly JSON format that captures the structure of your Figma file — pages, frames, components — so you can use it in:
+MCP (Model Context Protocol) is a structured JSON format that allows AI coding assistants to understand the layout and design structure of a frontend project.
 
-- VS Code / Cursor / Copilot
-- Design-to-code tools
-- Static code generators
-- Component visualizers
-
----
-
-## 📂 Example Output
+Each component has:
 
 ```json
 {
+  "type": "component",
+  "name": "Header",
+  "description": "Generated from Figma",
+  "children": ["Logo", "NavBar"],
+  "props": {},
+  "source": "Figma",
+  "filePath": "/Home/Header.tsx",
+  "parent": null
+}
+```
+
+---
+
+## 📄 Output Sample
+
+```json
+{
+  "type": "project",
+  "source": "Figma",
   "name": "Design System",
   "pages": [
     {
@@ -74,7 +91,7 @@ Model Context Protocol is a developer-friendly JSON format that captures the str
         {
           "name": "Header",
           "type": "FRAME",
-          "children": [...]
+          "children": ["Logo", "Nav"]
         }
       ]
     }
@@ -87,10 +104,11 @@ Model Context Protocol is a developer-friendly JSON format that captures the str
 
 ---
 
-## 🔗 Links
+## 🌍 Project Links
 
-- 🔧 GitHub: [github.com/rastmob/figma-to-ide](https://github.com/rastmob/figma-to-ide)
-- 🧠 Built by: [Mehmet ALP](https://www.linkedin.com/in/mehmetalp/)
+- 🔗 GitHub: [github.com/rastmob/figma-to-ide](https://github.com/rastmob/figma-to-ide)
+- 🌐 Website: [https://getcodigma.com](https://getcodigma.com)
+- 🧑‍💻 Author: [Mehmet ALP](https://www.linkedin.com/in/mehmetalp/)
 - 🐦 Twitter: [@mhmtakifalp](https://twitter.com/mhmtakifalp)
 - 💼 Company: [Rast Mobile](http://linkedin.com/company/rastmobile)
 
