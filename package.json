@@ -1,6 +1,6 @@
 {
     "name": "figma-to-ide",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Convert Figma designs to developer-friendly MCP structure with CLI & tree visualization",
     "main": "dist/index.js",
     "bin": {
