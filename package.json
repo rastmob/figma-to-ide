@@ -1,0 +1,41 @@
+{
+    "name": "figma-to-ide",
+    "version": "1.0.0",
+    "description": "Convert Figma designs to developer-friendly MCP structure with CLI & tree visualization",
+    "main": "dist/index.js",
+    "bin": {
+        "figma-to-ide": "dist/cli.js"
+    },
+    "scripts": {
+        "build": "tsc",
+        "start": "node dist/cli.js"
+    },
+    "keywords": [
+        "figma",
+        "ide",
+        "cli",
+        "design-to-code",
+        "developer-tools",
+        "mcp",
+        "copilot",
+        "cursor"
+    ],
+    "author": "Mehmet ALP <mehmet.alp@rastmobile.com>",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rastmob/figma-to-ide"
+    },
+    "bugs": {
+        "url": "https://github.com/rastmob/figma-to-ide/issues"
+    },
+    "homepage": "https://github.com/rastmob/figma-to-ide#readme",
+    "dependencies": {
+        "axios": "^1.6.0",
+        "yargs": "^17.7.2"
+    },
+    "devDependencies": {
+        "@types/node": "^22.13.14",
+        "typescript": "^5.2.0"
+    }
+}
