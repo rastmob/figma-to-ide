@@ -2,7 +2,7 @@
 
 Convert Figma design files into Claude-compatible Model Context Protocol (MCP) for use in IDEs, AI code assistants like Copilot, Cursor, or static generators.
 
-> 🔧 Built by [Mehmet ALP](https://www.linkedin.com/in/mehmetalp/), Founder of [Codigma.io](https://getcodigma.com) & [Rast Mobile](https://rastmobile.com)
+> 🔧 Built by [Mehmet ALP](https://www.linkedin.com/in/mehmetalp/), Founder of [Codigma.io](https://codigma.io) & [Rast Mobile](https://rastmobile.com)
 
 ---
 
@@ -107,7 +107,7 @@ Each component has:
 ## 🌍 Project Links
 
 - 🔗 GitHub: [github.com/rastmob/figma-to-ide](https://github.com/rastmob/figma-to-ide)
-- 🌐 Website: [https://getcodigma.com](https://getcodigma.com)
+- 🌐 Website: [https://codigma.io](https://codigma.io)
 - 🧑‍💻 Author: [Mehmet ALP](https://www.linkedin.com/in/mehmetalp/)
 - 🐦 Twitter: [@mhmtakifalp](https://twitter.com/mhmtakifalp)
 - 💼 Company: [Rast Mobile](http://linkedin.com/company/rastmobile)
